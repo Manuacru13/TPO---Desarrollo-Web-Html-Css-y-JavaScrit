@@ -16,17 +16,68 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6; /* Espaciado entre líneas */
+    flex-wrap: wrap;
+    
 }
+
+.body-inicio {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    height: 100vh; /* Asegura que el body ocupa el 100% de la altura de la ventana */
+    margin: 0; /* Elimina los márgenes por defecto */
+    background-image: url('img/imagen-inicio.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.container-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-inicio {
+    width: 100%; /* Ocupa todo el ancho del body */
+}
+
+.section-inicio {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Opcional: Alinea el contenido de la sección en columna */
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+}
+.saludo-inicio img {
+    width: 150px; /* Ajusta el tamaño según tus necesidades */
+    height: 150px; /* Asegúrate de que la altura sea igual al ancho para mantener la forma circular */
+    border-radius: 50%; /* Esto hará que la imagen sea circular */
+    object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el contenedor sin distorsionar */
+    border: 2px solid var(--primary-color); /* Opcional: Añade un borde blanco alrededor de la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Añade una sombra para darle un efecto de elevación */
+}
+
+.saludo-inicio {
+    color: #fff;
+}
+
 
 header {
     background-color: var(--secundary-color);
     color: #fff;
-    padding: 1rem;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    /* position: fixed;
+    position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; */
+    z-index: 1000;
 }
 
 nav ul {
@@ -46,66 +97,6 @@ nav ul li a {
 }
 nav ul li a:hover {
     color: var(--primary-color);
-}
-
-.main-inicio {
-        background-image: url('./img/imagen-inicio.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-}
-
-.saludo-inicio {
-    background-color: #fff;
-}
-
-/* Estilo para la sección de proyectos*/
-.projects-section {
-    padding: 80px 20px 20px;
-    margin-top: 50px;
-}
-
-.project {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLeft 1s ease forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-    
-
-.project h3 {
-    margin-top: 0;
-    font-size: 24px;
-    color: #fff;
-}
-
-.project h4 {
-    margin-top: 0;
-    font-size: 24px;
-    color: #fff;
-}
-
-.project p {
-    color: #fff;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.project h2 {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #fff;
-}
-
-.project ul {
-    margin-top: 10px;
-    padding-left: 20px;
-    list-style-type: disc;
 }
 
 /* Estilo para la sección About */
@@ -157,11 +148,56 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
+/* Estilo para la sección de proyectos*/
+.projects-section {
+    padding: 80px 20px 20px;
+    margin-top: 50px;
+}
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+    
+
+.project h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.project h4 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.project p {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.project h2 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.project ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
 footer {
     background-color: black;
+    padding: 10px 20px;
     color: #fff;
     text-align: center;
-    padding: 1rem;
     position: fixed;
     width: 100%;
     bottom: 0;
