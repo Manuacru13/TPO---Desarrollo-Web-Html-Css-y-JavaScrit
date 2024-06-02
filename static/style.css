@@ -1,7 +1,8 @@
 :root {
-    --bg-color:#143954;
+    --bg-color:#fff;
     --primary-color:#ca610c;
-    --secundary-color:#373A40;
+    --secundary-color:#1f1c1c;
+
 }
 
 * {
@@ -11,65 +12,9 @@
         
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6; /* Espaciado entre líneas */
-    flex-wrap: wrap;
-    
-}
-
-.body-inicio {
-    display: flex;
-    justify-content: column;
-    align-items: center;
-    height: 100vh; /* Asegura que el body ocupa el 100% de la altura de la ventana */
-    margin: 0; /* Elimina los márgenes por defecto */
-    background-image: url('img/imagen-inicio.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-
-.container-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-inicio {
-    width: 100%; /* Ocupa todo el ancho del body */
-}
-
-.section-inicio {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Opcional: Alinea el contenido de la sección en columna */
-    text-align: center; /* Centra el texto */
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-}
-.saludo-inicio img {
-    width: 150px; /* Ajusta el tamaño según tus necesidades */
-    height: 150px; /* Asegúrate de que la altura sea igual al ancho para mantener la forma circular */
-    border-radius: 50%; /* Esto hará que la imagen sea circular */
-    object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el contenedor sin distorsionar */
-    border: 2px solid var(--primary-color); /* Opcional: Añade un borde blanco alrededor de la imagen */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Añade una sombra para darle un efecto de elevación */
-}
-
-.saludo-inicio {
-    color: #fff;
-}
-
-
 header {
     background-color: var(--secundary-color);
-    color: #fff;
+    color: var(--secundary-color);
     padding: 20px;
     justify-content: center;
     align-items: center;
@@ -91,23 +36,89 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--bg-color);
     text-decoration: none;
     padding: 10px 15px; /* Espaciado uniforme para enlaces */
+    transition: background-color 0.3s ease; /* Transición de 0.3 segundos */
 }
 nav ul li a:hover {
     color: var(--primary-color);
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:  #1f1c1c;
+    line-height: 1.6; /* Espaciado entre líneas */
+    flex-wrap: wrap;
+    
+}
+
+.body-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; /* Elimina los márgenes por defecto */
+}
+
+.container-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-inicio {
+    width: 100%; /* Ocupa todo el ancho del body */
+}
+
+.section-inicio {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Opcional: Alinea el contenido de la sección en columna */
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    background-image: url('img/imagen-inicio.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+}
+.saludo-inicio img {
+    width: 150px; /* Ajusta el tamaño según tus necesidades */
+    height: 150px; /* Asegúrate de que la altura sea igual al ancho para mantener la forma circular */
+    border-radius: 50%; /* Esto hará que la imagen sea circular */
+    object-fit: cover; /*Esto asegura que la imagen se recorte para llenar el contenedor sin distorsionar*/
+    border: 2px solid var(--primary-color); /* Opcional: Añade un borde blanco alrededor de la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Añade una sombra para darle un efecto de elevación */
+}
+
+.saludo-inicio h2 {
+    color: var(--primary-color);
+}
+
+.saludo-inicio {
+    color: var(--bg-color);
+}
+
+
 /* Estilo para la sección About */
 .about-section {
-    background-color: hsl(0, 0%, 16%);
-    padding: 40px;
-    margin: 20px auto;
-    border-radius: 10px;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--secundary-color);
+}
+
+.about-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+    margin-right: 20px; /* Espacio entre la imagen y el resto del contenido */
 }
 
 .about-section h1 {
@@ -118,9 +129,20 @@ nav ul li a:hover {
 
 .about-section p {
     margin-bottom: 15px;
-    color: #ccc;
+    color: var(--bg-color);
 }
 
+.about-description {
+    padding-top: 80px;
+}
+
+.about-description h2 {
+    color: var(--primary-color);
+}
+
+.about-description ul {
+    color: var(--bg-color);
+}
 .about-section ul {
     list-style: none;
     padding-left: 0;
@@ -144,24 +166,33 @@ nav ul li a:hover {
     border-radius: 50%;
 }
 
-.about-section ul li strong {
-    color: var(--primary-color);
+.about-hab ul {
+    display: flex;
+    justify-content: space-around; /* Para distribuir las habilidades horizontalmente */
 }
 
 /* Estilo para la sección de proyectos*/
 .projects-section {
-    padding: 80px 20px 20px;
-    margin-top: 50px;
+    padding: 25px 25px;
+    background-color: var(--secundary-color);
+    
 }
 
 .project {
-    background-color: #fff;
+    background-color: #333;
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    flex: 0 0 30%; /* Para que los proyectos ocupen un ancho fijo y se ajusten automáticamente en función del espacio disponible */
+    margin: 0 15px; /* Espacio entre proyectos */
     
+}
+
+.title-projects {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--bg-color);
+}
 
 .project h3 {
     margin-top: 0;
@@ -172,62 +203,96 @@ nav ul li a:hover {
 .project h4 {
     margin-top: 0;
     font-size: 24px;
-    color: #fff;
+    color: var(--primary-color);
 }
 
 .project p {
-    color: #333;
+    color: var(--bg-color);
     font-size: 14px;
     margin-bottom: 10px;
-}
-
-.project h2 {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #fff;
 }
 
 .project ul {
     margin-top: 10px;
     padding-left: 20px;
     list-style-type: disc;
+    color: var(--bg-color);
+}
+
+/* Estilo para la sección de contacto */
+#contact {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+#contact h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #fff;
+}
+
+#contact p {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button[type="submit"] {
+    padding: 30px 50px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1); /* Aumenta el tamaño del botón al pasar el cursor */
 }
 
 footer {
     background-color: black;
     padding: 10px 20px;
-    color: #fff;
+    margin-top: auto;
+    color: var(--bg-color);
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
-    bottom: 0;
-}
 
-form {
-    display: flex;
-    flex-direction: column;
 }
-
-form label {
-    margin-top: 1rem;
+/* Efecto de movimiento al pasar el ratón */
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--primary-color);
 }
-
-form input, form textarea {
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-    width: 100%;
-}
-
-form button {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 1.6vw;
+    }
 }
