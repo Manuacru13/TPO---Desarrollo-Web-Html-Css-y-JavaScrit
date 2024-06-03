@@ -1,7 +1,7 @@
 :root {
     --bg-color:#fff;
     --primary-color:#ca610c;
-    --secundary-color:#1f1c1c;
+    --secondary-color:#1f1c1c;
 
 }
 
@@ -12,14 +12,23 @@
         
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    font-size: 16px; /* Tamaño de fuente base */
+    line-height: 1.6; /* Espaciado entre líneas */
+    
+}
+
+
 header {
-    background-color: var(--secundary-color);
-    color: var(--secundary-color);
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
     padding: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -28,6 +37,8 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -45,21 +56,10 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color:  #1f1c1c;
-    line-height: 1.6; /* Espaciado entre líneas */
-    flex-wrap: wrap;
-    
-}
-
 .body-inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0; /* Elimina los márgenes por defecto */
 }
 
 .container-main {
@@ -108,32 +108,36 @@ body {
 /* Estilo para la sección About */
 .about-section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    background-color: var(--secundary-color);
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 20px;
 }
 
 .about-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px;
-    margin-right: 20px; /* Espacio entre la imagen y el resto del contenido */
+    flex: 1;
+    margin: 10px;
+}
+.about-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .about-section h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 3vw;
+    margin-bottom: 2vw;
     color:var(--primary-color);
 }
 
 .about-section p {
-    margin-bottom: 15px;
+    margin-bottom: 1.5vw;
     color: var(--bg-color);
 }
 
 .about-description {
-    padding-top: 80px;
+    flex: 1;
 }
 
 .about-description h2 {
@@ -150,8 +154,8 @@ body {
 
 .about-section ul li {
     position: relative; /* Añadido para posicionar el icono */
-    padding-left: 25px; /* Aumentado para espacio adicional */
-    margin-bottom: 10px;
+    padding-left: 2vw; /* Aumentado para espacio adicional */
+    margin-bottom: 1vw;
 }
 
 .about-section ul li::before {
@@ -160,8 +164,8 @@ body {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
+    width: 1vw;
+    height: 1vw;
     background: var(--primary-color);
     border-radius: 50%;
 }
@@ -171,10 +175,36 @@ body {
     justify-content: space-around; /* Para distribuir las habilidades horizontalmente */
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin-top: 5vw;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.social-links i {
+    font-size: 1.5em;
+}
+
 /* Estilo para la sección de proyectos*/
 .projects-section {
     padding: 25px 25px;
-    background-color: var(--secundary-color);
+    background-color: var(--secondary-color);
     
 }
 
@@ -221,54 +251,71 @@ body {
 
 /* Estilo para la sección de contacto */
 #contact {
+    background-image: url(img/section-contact.jpeg);
+    background-color: var(--secondary-color);
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 10px;
     max-width: 600px;
-    margin: auto;
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
 }
 
 #contact h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
+    margin-bottom: 20px; 
     color: #fff;
 }
 
 #contact p {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #ccc;
 }
 
-#contact-form {
+#formContact {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
 }
 
-.form-group {
+.form-control {
     display: flex;
     flex-direction: column;
 }
 
-.form-group label {
+.form-control label {
     margin-bottom: 5px;
     color: #fff;
 }
 
-.form-group input,
-.form-group textarea {
-    padding: 10px;
+.form-control input,
+.form-control textarea,
+.form-control select {
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
 }
 
+.form-control select {
+    appearance: none; /* Quitar estilos del selector */
+}
+
+.error {
+    color: red; /* Color del mensaje de error */
+    margin-top: 5px; /* Espaciado superior */
+}
+
 button[type="submit"] {
-    padding: 30px 50px;
+    padding: 15px 50px; /* Reducido el padding para que el botón no sea demasiado grande */
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: block; /* Convertido a bloque para ocupar todo el ancho del contenedor */
+    margin: 0 auto; /* Margen automático para centrar horizontalmente */
 }
 
 button[type="submit"]:hover {
@@ -277,7 +324,7 @@ button[type="submit"]:hover {
 }
 
 footer {
-    background-color: black;
+    background-color: var(--secondary-color);
     padding: 10px 20px;
     margin-top: auto;
     color: var(--bg-color);
@@ -291,8 +338,99 @@ footer {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px var(--primary-color);
 }
+
+/* ------------------------------------     MEDIA QUERIES (PUNTOS DE QUIEBRE) -------------------------------------*/
+
+
+/* Estilos para PC escritorio */
 @media screen and (min-width: 1024px) {
     body {
-        font-size: 1.6vw;
+        font-size: 16px; /* Tamaño de letra base */
+    }
+
+    section h2 {
+        font-size: 24px; /* Tamaño de título de sección */
+    }
+
+    section p {
+        font-size: 16px; /* Tamaño de texto */
+    }
+
+    .project h1 {
+        font-size: 24px; /* Tamaño de título de proyecto */
+    }
+
+    .project p {
+        font-size: 14px; /* Tamaño de texto de proyecto */
+    }
+
+    #contact h1 {
+        font-size: 2em; /* Tamaño de título de contacto */
+    }
+
+    #contact p {
+        font-size: 1em; /* Tamaño de texto de contacto */
+    }
+}
+
+/* Estilos para tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 14px; /* Tamaño de letra para tablet */
+    }
+
+    section h2 {
+        font-size: 22px; /* Tamaño de título de sección para tablet */
+    }
+
+    section p {
+        font-size: 14px; /* Tamaño de texto para tablet */
+    }
+
+    .project h1 {
+        font-size: 22px; /* Tamaño de título de proyecto para tablet */
+    }
+
+    .project p {
+        font-size: 12px; /* Tamaño de texto de proyecto para tablet */
+    }
+
+    #contact h1 {
+        font-size: 1.8em; /* Tamaño de título de contacto para tablet */
+    }
+
+    #contact p {
+        font-size: 0.9em; /* Tamaño de texto de contacto para tablet */
+    }
+}
+
+/* Estilos para celular */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 12px; /* Tamaño de letra para celular */
+    }
+
+    section h2 {
+        font-size: 20px; /* Tamaño de título de sección para celular */
+    }
+
+    section p {
+        font-size: 12px; /* Tamaño de texto para celular */
+    }
+
+    .project h1 {
+        font-size: 20px; /* Tamaño de título de proyecto para celular */
+    }
+
+    .project p {
+        font-size: 10px; /* Tamaño de texto de proyecto para celular */
+    }
+
+    #contact h1 {
+        font-size: 1.6em; /* Tamaño de título de contacto para celular */
+    }
+
+    #contact p {
+        font-size: 0.8em; /* Tamaño de texto de contacto para celular */
     }
 }

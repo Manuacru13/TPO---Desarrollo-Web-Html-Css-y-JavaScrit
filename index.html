@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Roberto Carlos- Inicio</title>
     <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="static/img/favicon.ico">
 </head>
 
-<body class=body-inicio>
+<body class="body-inicio">
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Sobre mí</a></li>
-                <li><a href="projects.html">Proyectos</a></li>
-                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="#presentation">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -30,7 +32,7 @@
         </section>
 
     <!-- Sección Sobre mí -->
-        <section class="about-section">
+        <section id="about" class="about-section">
             <div class="about-img">
                 <img src="./static/img/foto-about.jpeg" alt="Carlos García">
             </div>
@@ -45,6 +47,18 @@
                     <li>Node.js & Express</li>
                     <li>MongoDB & SQL</li>
                 </ul>
+                <p>Si quieres saber más sobre mí, visita mis redes:</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/?locale=es_LA" target="_blank">
+                        <i class="fa-brands fa-facebook"></i><span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+                    </a>
+                    <a href="https://ar.linkedin.com/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -89,33 +103,53 @@
         </section>
         
         <!-- Sección Contacto -->
-        <section id="contact">
+        <section class="contact" id="contact">
             <div>
             <h1>Contáctame</h1>
-            <p>¿Tienes alguna pregunta o proyecto en mente? ¡No dudes en contactarme usando el siguiente formulario o enviándome un correo electrónico a <a href="mailto:roberto_carlos@example.com">roberto_carlos@example.com</a>!</p>
+            <p>¿Tienes alguna pregunta o proyecto en mente? ¡No dudes en contactarme usando el siguiente formulario o enviándome un correo electrónico a <a href="mailto:roberto_carlos@example.com" style="color: #c77305;">roberto_carlos@example.com</a>!</p>
             </div>
             
-            <form id="contact-form" action="https://formspree.io/f/{your-id}" method="POST">
-                <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required>
+            <form action="#" id="formContact" method="GET" novalidate>
+                <div class="form-control">
+                    <label>Nombre</label>
+                    <input type="text" required name="firstname"  id="firstname">
                 </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="error" id="error-firstname"></div>
+
+                <div class="form-control">
+                    <label>Apellido</label>
+                    <input type="text" required name="lastname" id="lastname">
                 </div>
-                <div class="form-group">
+                <div class="error" id="error-lastname"></div>
+
+                <div class="form-control">
+                    <label>Correo Electrónico</label>
+                    <input type="email" required name="email" id="email">
+                </div>
+                <div class="form-control">
+                    <label for="interest">Interés:</label>
+                    <select id="interest" name="interest" required>
+                        <option value="">Seleccionar</option>
+                        <option value="support">Soporte Técnico</option>
+                        <option value="feedback">Retroalimentación</option>
+                        <option value="other">Otro</option>
+                    </select>
+                </div>
+                <div class="form-control">
                     <label for="message">Mensaje</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <div>
-                <button type="submit">Enviar</button>
+                    <div class="error" id="error-email">
                 </div>
-            </form>
+        
+                <button type="submit" id="btn-send">Enviar</button>
+                
+            </form>     
         </section>
 
     </main>
 
+    <script src="./static/js/validation-contact.js"></script>
     <footer>
         <p>&copy; 2024 Roberto Carlos. Todos los derechos reservados.</p>
     </footer>  
